@@ -2,7 +2,7 @@
 
 namespace ExistsForAll.ScopeLevelCache
 {
-    public class Class1
+    public interface IScopeLevelCacheScope : IDisposable
     {
     }
 }
