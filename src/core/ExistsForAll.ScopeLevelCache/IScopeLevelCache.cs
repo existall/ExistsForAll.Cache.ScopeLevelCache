@@ -2,7 +2,7 @@
 
 namespace ExistsForAll.ScopeLevelCache
 {
-    public interface IAsyncScopeLevelCache
+    public interface IScopeLevelCache
     {
         void SetValue(string key, object value);
         void SetDisposableValue(string key, IDisposable value);

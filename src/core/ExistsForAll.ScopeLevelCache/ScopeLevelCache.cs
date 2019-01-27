@@ -4,7 +4,7 @@ using System.Threading;
 
 namespace ExistsForAll.ScopeLevelCache
 {
-    public class AsyncScopeLevelCache : IAsyncScopeLevelCache
+    public class ScopeLevelCache : IScopeLevelCache
     {
         private readonly AsyncLocal<ConcurrentDictionary<string, ICacheItem>> _cache =
             new AsyncLocal<ConcurrentDictionary<string, ICacheItem>>();
@@ -75,7 +75,7 @@ namespace ExistsForAll.ScopeLevelCache
         private void ValidateCacheExistence()
         {
             if (Cache == null)
-                throw new InvalidOperationException(Resources.CacheNotInitiazliedMessage());
+                throw new InvalidOperationException(Resources.CacheNotInitializedMessage());
         }
     }
 }

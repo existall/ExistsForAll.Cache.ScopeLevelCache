@@ -2,16 +2,16 @@
 {
     public class ScopeLevelCacheScopingFactory : IScopeLevelCacheFactory
     {
-        public ScopeLevelCacheScopingFactory(IAsyncScopeLevelCache asyncScopeLevelCache)
+        public ScopeLevelCacheScopingFactory(IScopeLevelCache scopeLevelCache)
         {
-            AsyncScopeLevelCache = (AsyncScopeLevelCache) asyncScopeLevelCache;
+            ScopeLevelCache = (ScopeLevelCache) scopeLevelCache;
         }
 
-        internal AsyncScopeLevelCache AsyncScopeLevelCache { get; }
+        internal ScopeLevelCache ScopeLevelCache { get; }
 
         public IScopeLevelCacheScope CreateScopeLevelCacheScope()
         {
-            return new ScopeLevelCacheScope(AsyncScopeLevelCache);
+            return new ScopeLevelCacheScope(ScopeLevelCache);
         }
     }
 }

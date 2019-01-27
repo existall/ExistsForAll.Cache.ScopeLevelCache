@@ -2,10 +2,10 @@
 {
     internal static class Resources
     {
-        public static string CacheNotInitiazliedMessage()
+        public static string CacheNotInitializedMessage()
         {
             return
-                "AsyncScopeLevelCache was not initlized at the start of the scope, use sevices.AddAsyncScopeLevelCache() extension method on Statup file" +
+                "ScopeLevelCache was not initialized at the start of the scope, use services.AddAsyncScopeLevelCache() extension method on Startup file" +
                 "If the usage is on a custom scope please use ScopeLevelCacheScopingFactory.CreateScopeLevelCacheScope() at the beginning of the scope";
         }
     }

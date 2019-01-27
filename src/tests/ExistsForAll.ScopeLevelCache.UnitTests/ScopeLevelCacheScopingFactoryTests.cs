@@ -13,7 +13,7 @@ namespace ExistsForAll.ScopeLevelCache.UnitTests
         public void SetValue_WhenCacheInScope_ShouldReturnValue()
         {
             var sut = BuildSut();
-            var cache = sut.AsyncScopeLevelCache;
+            var cache = sut.ScopeLevelCache;
 
             using (sut.CreateScopeLevelCacheScope())
             {
@@ -30,7 +30,7 @@ namespace ExistsForAll.ScopeLevelCache.UnitTests
         public void SetValue_WhenCacheInScopeAndUpdateValue_ShouldReturnNewValue()
         {
             var sut = BuildSut();
-            var cache = sut.AsyncScopeLevelCache;
+            var cache = sut.ScopeLevelCache;
 
             using (sut.CreateScopeLevelCacheScope())
             {
@@ -48,7 +48,7 @@ namespace ExistsForAll.ScopeLevelCache.UnitTests
         public void TryGetValue_WhenCacheInScope_ShouldReturnValue()
         {
             var sut = BuildSut();
-            var cache = sut.AsyncScopeLevelCache;
+            var cache = sut.ScopeLevelCache;
 
             using (sut.CreateScopeLevelCacheScope())
             {
@@ -66,7 +66,7 @@ namespace ExistsForAll.ScopeLevelCache.UnitTests
         public void TryGetValue_WhenCacheInScopeAndUpdateValue_ShouldReturnNewValue()
         {
             var sut = BuildSut();
-            var cache = sut.AsyncScopeLevelCache;
+            var cache = sut.ScopeLevelCache;
 
             using (sut.CreateScopeLevelCacheScope())
             {
@@ -85,7 +85,7 @@ namespace ExistsForAll.ScopeLevelCache.UnitTests
         public void TryGetValue_WhenCacheInScopeAndValueWasNotSet_ShouldReturnFalse()
         {
             var sut = BuildSut();
-            var cache = sut.AsyncScopeLevelCache;
+            var cache = sut.ScopeLevelCache;
 
             using (sut.CreateScopeLevelCacheScope())
             {
@@ -102,7 +102,7 @@ namespace ExistsForAll.ScopeLevelCache.UnitTests
         public void Dispose_WhenCacheScopeEnds_ShouldDisposeCache()
         {
             var sut = BuildSut();
-            var cache = sut.AsyncScopeLevelCache;
+            var cache = sut.ScopeLevelCache;
             var disposable = new Disposable();
 
             using (sut.CreateScopeLevelCacheScope())
@@ -117,7 +117,7 @@ namespace ExistsForAll.ScopeLevelCache.UnitTests
 
         private ScopeLevelCacheScopingFactory BuildSut()
         {
-            return new ScopeLevelCacheScopingFactory(new AsyncScopeLevelCache());
+            return new ScopeLevelCacheScopingFactory(new ScopeLevelCache());
         }
     }
 }

@@ -11,7 +11,7 @@ namespace ExistsForAll.ScopeLevelCache.UnitTests
         [Fact]
         public void SetValue_WhenCacheNotInScope_ShouldThrowException()
         {
-            var sut = new AsyncScopeLevelCache();
+            var sut = new ScopeLevelCache();
 
             Assert.Throws<InvalidOperationException>(() => sut.SetValue(SomeKey, SomeValue));
         }
@@ -19,7 +19,7 @@ namespace ExistsForAll.ScopeLevelCache.UnitTests
         [Fact]
         public void GetValue_WhenCacheNotInScope_ShouldThrowException()
         {
-            var sut = new AsyncScopeLevelCache();
+            var sut = new ScopeLevelCache();
 
             Assert.Throws<InvalidOperationException>(() => sut.GetValue(SomeKey));
         }
@@ -27,7 +27,7 @@ namespace ExistsForAll.ScopeLevelCache.UnitTests
         [Fact]
         public void TryGetValue_WhenCacheNotInScope_ShouldThrowException()
         {
-            var sut = new AsyncScopeLevelCache();
+            var sut = new ScopeLevelCache();
 
             Assert.Throws<InvalidOperationException>(() => sut.TryGetValue(SomeKey, out var value));
         }

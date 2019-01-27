@@ -4,9 +4,9 @@ namespace ExistsForAll.ScopeLevelCache
 {
     internal class ScopeLevelCacheScope : IScopeLevelCacheScope
     {
-        public AsyncScopeLevelCache Cache { get; }
+        public ScopeLevelCache Cache { get; }
 
-        public ScopeLevelCacheScope(AsyncScopeLevelCache cache)
+        public ScopeLevelCacheScope(ScopeLevelCache cache)
         {
             cache.Cache = new ConcurrentDictionary<string, ICacheItem>();
             Cache = cache;
